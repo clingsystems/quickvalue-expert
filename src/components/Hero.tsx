@@ -32,7 +32,7 @@ const Hero = () => {
             <Zap className="w-6 h-6 text-primary" />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white max-w-3xl mx-auto leading-tight line-clamp-2">
-            Turn Your EV Battery Inventory Into Instant Value
+            Turn Your EV Battery Inventory Into Value
           </h1>
           <p className="text-xl text-white/90 mb-8">
             Upload your inventory spreadsheet and get real-time market valuations connected to metal prices. Connect directly with verified recyclers ready to buy.
