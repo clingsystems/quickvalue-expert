@@ -16,7 +16,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-wind-turbines-in-the-sunset-light-27692-large.mp4"
+            src="https://cdn.coverr.co/videos/coverr-wind-turbines-in-a-field-5816/1080p.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
