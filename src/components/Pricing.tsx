@@ -29,7 +29,7 @@ const Pricing = () => {
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center gap-2">
                       <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span>{feature}</span>
+                      <span>{feature.name}</span>
                     </li>
                   ))}
                 </ul>
