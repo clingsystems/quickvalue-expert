@@ -1,46 +1,105 @@
-export interface PricingPlan {
+export interface Feature {
+  id: string;
   name: string;
-  price: string | number;
-  description: string;
-  features: string[];
+  description?: string;
 }
 
-export const pricingPlans: PricingPlan[] = [
-  {
-    name: "Free",
-    price: "0",
-    description: "Perfect for trying out our service",
-    features: [
-      "5 battery lookups per day",
-      "Real-time market data",
-      "Basic valuation reports",
-      "Email support"
-    ]
+export interface PricingTier {
+  id: string;
+  name: string;
+  price: number | "Custom";
+  currency: string;
+  billingPeriod: "monthly" | "yearly";
+  description: string;
+  features: Feature[];
+  highlighted?: boolean;
+}
+
+export interface PricingConfig {
+  region: string;
+  currency: string;
+  tiers: PricingTier[];
+}
+
+const createFeature = (id: string, name: string, description?: string): Feature => ({
+  id,
+  name,
+  description,
+});
+
+const features = {
+  basicLookups: createFeature("basic-lookups", "5 battery lookups per day"),
+  marketData: createFeature("market-data", "Real-time market data"),
+  basicReports: createFeature("basic-reports", "Basic valuation reports"),
+  emailSupport: createFeature("email-support", "Email support"),
+  advancedLookups: createFeature("advanced-lookups", "500 battery lookups per day"),
+  apiAccess: createFeature("api-access", "API access"),
+  advancedAnalytics: createFeature("advanced-analytics", "Advanced analytics"),
+  prioritySupport: createFeature("priority-support", "Priority support"),
+  bulkUploads: createFeature("bulk-uploads", "CSV bulk uploads"),
+  detailedReports: createFeature("detailed-reports", "Detailed valuation reports"),
+  unlimitedLookups: createFeature("unlimited-lookups", "Unlimited battery lookups"),
+  erpIntegration: createFeature("erp-integration", "Full ERP integration"),
+  customAnalytics: createFeature("custom-analytics", "Custom analytics"),
+  premiumSupport: createFeature("premium-support", "24/7 priority support"),
+  accountManager: createFeature("account-manager", "Dedicated account manager"),
+  customReporting: createFeature("custom-reporting", "Custom reporting"),
+};
+
+export const pricingConfigs: Record<string, PricingConfig> = {
+  US: {
+    region: "United States",
+    currency: "USD",
+    tiers: [
+      {
+        id: "free",
+        name: "Free",
+        price: 0,
+        currency: "USD",
+        billingPeriod: "monthly",
+        description: "Perfect for trying out our service",
+        features: [
+          features.basicLookups,
+          features.marketData,
+          features.basicReports,
+          features.emailSupport,
+        ],
+      },
+      {
+        id: "pro",
+        name: "Pro",
+        price: 199,
+        currency: "USD",
+        billingPeriod: "monthly",
+        description: "For growing businesses",
+        highlighted: true,
+        features: [
+          features.advancedLookups,
+          features.apiAccess,
+          features.advancedAnalytics,
+          features.prioritySupport,
+          features.bulkUploads,
+          features.detailedReports,
+        ],
+      },
+      {
+        id: "enterprise",
+        name: "Enterprise",
+        price: "Custom",
+        currency: "USD",
+        billingPeriod: "monthly",
+        description: "For large organizations",
+        features: [
+          features.unlimitedLookups,
+          features.erpIntegration,
+          features.customAnalytics,
+          features.premiumSupport,
+          features.accountManager,
+          features.customReporting,
+        ],
+      },
+    ],
   },
-  {
-    name: "Pro",
-    price: "199",
-    description: "For growing businesses",
-    features: [
-      "500 battery lookups per day",
-      "API access",
-      "Advanced analytics",
-      "Priority support",
-      "CSV bulk uploads",
-      "Detailed valuation reports"
-    ]
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    description: "For large organizations",
-    features: [
-      "Unlimited battery lookups",
-      "Full ERP integration",
-      "Custom analytics",
-      "24/7 priority support",
-      "Dedicated account manager",
-      "Custom reporting"
-    ]
-  }
-];
+};
+
+export const pricingPlans = pricingConfigs.US.tiers;
