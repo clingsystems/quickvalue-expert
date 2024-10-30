@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Battery, Zap } from "lucide-react";
-import { downloadSampleCSV } from "@/lib/sampleData";
 
 const Hero = () => {
   return (
@@ -38,20 +37,12 @@ const Hero = () => {
           <p className="text-xl text-white/90 mb-8">
             Upload your inventory spreadsheet and get real-time market valuations connected to metal prices. Connect directly with verified recyclers ready to buy.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex justify-center">
             <a href="https://battery-guide-helper-48.gptengineer.run/" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="text-lg px-8">
                 Get Started <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </a>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-lg bg-white/10 border-white/20 text-white hover:bg-white/20"
-              onClick={downloadSampleCSV}
-            >
-              Download Sample CSV
-            </Button>
           </div>
         </div>
       </div>
