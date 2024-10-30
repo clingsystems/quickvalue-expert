@@ -7,6 +7,7 @@ import CustomerReviews from "@/components/CustomerReviews";
 import HistoricalRates from "@/components/HistoricalRates";
 import CTASection from "@/components/CTASection";
 import ERPIntegrations from "@/components/ERPIntegrations";
+import Pricing from "@/components/Pricing";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <HowItWorks />
       <Features />
       <ERPIntegrations />
+      <Pricing />
       <CustomerReviews />
       <HistoricalRates />
       <CTASection />
