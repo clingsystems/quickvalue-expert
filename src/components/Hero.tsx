@@ -31,7 +31,7 @@ const Hero = () => {
             </span>
             <Zap className="w-6 h-6 text-primary" />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white max-w-3xl mx-auto leading-tight">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white max-w-3xl mx-auto leading-tight line-clamp-2">
             Turn Your EV Battery Inventory Into Instant Value
           </h1>
           <p className="text-xl text-white/90 mb-8">
