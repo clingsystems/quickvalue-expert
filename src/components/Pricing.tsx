@@ -52,7 +52,7 @@ const Pricing = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <Card key={index} className="relative animate-fade-up" style={{ animationDelay: `${index * 100}ms` }}>
+            <Card key={index} className="relative animate-fade-up flex flex-col" style={{ animationDelay: `${index * 100}ms` }}>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
                 <div className="mt-2">
@@ -63,7 +63,7 @@ const Pricing = () => {
                 </div>
                 <p className="text-gray-600 mt-2">{plan.description}</p>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow">
                 <ul className="space-y-3">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center gap-2">
@@ -73,7 +73,7 @@ const Pricing = () => {
                   ))}
                 </ul>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="mt-auto">
                 <a 
                   href="https://battery-guide-helper-48.gptengineer.run/" 
                   target="_blank" 

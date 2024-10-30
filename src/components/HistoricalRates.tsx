@@ -1,9 +1,9 @@
 import { Card } from "@/components/ui/card";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
 
 const data = Array.from({ length: 30 }, (_, i) => ({
   date: new Date(Date.now() - (29 - i) * 24 * 60 * 60 * 1000).toLocaleDateString(),
-  price: Math.floor(7000 + Math.random() * 3000) // Random price between 7000 and 10000
+  price: Math.floor(7000 + Math.random() * 3000)
 }));
 
 const HistoricalRates = () => {
@@ -15,26 +15,41 @@ const HistoricalRates = () => {
         <Card className="p-6">
           <div className="h-[400px]">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={data}>
-                <CartesianGrid strokeDasharray="3 3" />
+              <AreaChart data={data}>
+                <defs>
+                  <linearGradient id="colorPrice" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#0066FF" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#0066FF" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
                 <XAxis 
                   dataKey="date" 
                   tick={{ fontSize: 12 }}
                   interval={6}
+                  stroke="#64748b"
                 />
                 <YAxis 
                   tick={{ fontSize: 12 }}
                   domain={['dataMin - 500', 'dataMax + 500']}
+                  stroke="#64748b"
                 />
-                <Tooltip />
-                <Line 
+                <Tooltip 
+                  contentStyle={{ 
+                    backgroundColor: '#fff',
+                    border: '1px solid #e2e8f0',
+                    borderRadius: '6px'
+                  }}
+                />
+                <Area 
                   type="monotone" 
                   dataKey="price" 
-                  stroke="hsl(var(--primary))"
+                  stroke="#0066FF"
+                  fillOpacity={1}
+                  fill="url(#colorPrice)"
                   strokeWidth={2}
-                  dot={false}
                 />
-              </LineChart>
+              </AreaChart>
             </ResponsiveContainer>
           </div>
         </Card>
