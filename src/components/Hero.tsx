@@ -16,7 +16,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src="https://cdn.coverr.co/videos/coverr-aerial-view-of-wind-turbines-4584/1080p.mp4"
+            src="https://media.istockphoto.com/id/1925055660/sv/video/aerial-view-wind-turbines-at-sunset.mp4?s=mp4-640x640-is&k=20&c=TMXG6IhlRg5A3LLyhXnI-nfexdGM46z67zqQtHZkEz8="
             type="video/mp4"
           />
           Your browser does not support the video tag.
