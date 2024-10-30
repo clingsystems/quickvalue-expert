@@ -1,4 +1,4 @@
-import { FileSpreadsheet, LineChart, Wallet } from "lucide-react";
+import { FileSpreadsheet, LineChart, Wallet, ArrowRight } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
@@ -32,7 +32,9 @@ const HowItWorks = () => {
                 <p className="text-gray-600">{step.description}</p>
               </div>
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/4 right-0 w-1/3 h-0.5 bg-gray-200 transform translate-x-1/2" />
+                <div className="hidden md:flex absolute top-12 -right-6 transform translate-x-1/2">
+                  <ArrowRight className="w-8 h-8 text-gray-300" />
+                </div>
               )}
             </div>
           ))}
