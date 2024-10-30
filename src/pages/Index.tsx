@@ -3,6 +3,8 @@ import Hero from "@/components/Hero";
 import ValueProps from "@/components/ValueProps";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
+import CustomerReviews from "@/components/CustomerReviews";
+import HistoricalRates from "@/components/HistoricalRates";
 import CTASection from "@/components/CTASection";
 
 const Index = () => {
@@ -13,6 +15,8 @@ const Index = () => {
       <ValueProps />
       <HowItWorks />
       <Features />
+      <CustomerReviews />
+      <HistoricalRates />
       <CTASection />
     </div>
   );
