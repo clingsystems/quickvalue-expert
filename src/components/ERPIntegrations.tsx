@@ -9,7 +9,7 @@ const ERPIntegrations = () => {
     },
     {
       name: "Business Central",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Microsoft_Dynamics_365_Logo.svg",
+      logo: "https://docs.ongoingwarehouse.com/Content/Images/Logos/Original/MS-business-central-logo-500x240.max-500x240.png",
       description: "Full compatibility with Microsoft Business Central"
     },
     {
