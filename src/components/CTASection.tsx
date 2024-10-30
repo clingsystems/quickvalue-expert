@@ -11,9 +11,11 @@ const CTASection = () => {
         <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
           Join leading vehicle manufacturers who are already using our platform to optimize their battery inventory value.
         </p>
-        <Button size="lg" variant="secondary" className="text-primary text-lg px-8">
-          Get Started <ArrowRight className="ml-2 w-5 h-5" />
-        </Button>
+        <a href="https://battery-guide-helper-48.gptengineer.run/" target="_blank" rel="noopener noreferrer">
+          <Button size="lg" variant="secondary" className="text-primary text-lg px-8">
+            Get Started <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </a>
       </div>
     </div>
   );

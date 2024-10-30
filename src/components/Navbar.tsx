@@ -8,7 +8,9 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
           <a href="#features" className="text-gray-600 hover:text-primary transition-colors">Features</a>
           <a href="#how-it-works" className="text-gray-600 hover:text-primary transition-colors">How it works</a>
-          <Button>Get Started</Button>
+          <a href="https://battery-guide-helper-48.gptengineer.run/" target="_blank" rel="noopener noreferrer">
+            <Button>Get Started</Button>
+          </a>
         </div>
       </div>
     </nav>
