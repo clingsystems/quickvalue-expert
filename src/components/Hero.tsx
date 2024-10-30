@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Battery, Zap } from "lucide-react";
+import { downloadSampleCSV } from "@/lib/sampleData";
 
 const Hero = () => {
   return (
@@ -23,7 +24,12 @@ const Hero = () => {
             <Button size="lg" className="text-lg px-8">
               Get Started <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="text-lg"
+              onClick={downloadSampleCSV}
+            >
               Download Sample CSV
             </Button>
           </div>
